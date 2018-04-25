@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    // FILO (first in, last out)
+    function Stack() {
+        this.size = 0;
+        this.elements = [];
+
+        this.push = function (value) {
+            this.size++;                        // increase size property
+            this.elements[this.size] = value;   // add element to END of array
+        };
+        this.pop = function () {
+            var returnElement = this.elements[this.size];   // remove LAST element of array
+            this.size--;                                    // decrease size property
+            return returnElement;                           // return element
+        };
+    }
+
+    debugger;
+
+    var myStack = new Stack();
+
+    // alerts 3 2 1
+    myStack.push(1);
+    myStack.push(2);
+    myStack.push(3);
+    alert("size = " + myStack.size);
+    alert(myStack.pop() + " " + myStack.pop() + " " + myStack.pop());
+    alert("size = " + myStack.size);
+
+</script>
+
+</body>
+</html>

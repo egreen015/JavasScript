@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Javascript</title>
+</head>
+<body>
+
+<form>
+    <!--Name input-->
+    <label for="name">Person's Name </label>
+    <input type="text" id="name"><br><br>
+
+    <!--Skills inputs-->
+    <label for="skill01">Skill #1 </label>
+    <input type="text" id="skill01"><br>
+    <label for="skill02">Skill #2 </label>
+    <input type="text" id="skill02"><br>
+    <label for="skill03">Skill #3 </label>
+    <input type="text" id="skill03"><br>
+    <label for="skill04">Skill #4 </label>
+    <input type="text" id="skill04"><br>
+    <label for="skill05">Skill #5 </label>
+    <input type="text" id="skill05"><br><br>
+
+    <!--Add Person Button-->
+    <input id="addPersonButton" type="submit" value="Add Person"><br><br>
+
+    <hr>
+
+    <!--Search Track Button-->
+    <label for="skill">Search For People with a Skill</label><br>
+    <input type="text" id="skill">
+    <input id="searchSkillButton" type="submit" value="Search"><br>
+</form>
+
+<script>
+    'use strict';
+
+    // Person Object
+    function Person(name) {
+        this.name = name;
+        this.skills = [];
+
+        this.addSkill = function (skill) {
+            // only add if not blank
+            if (skill != "") {
+                this.skills.push(skill);
+            }
+        };
+
+        this.searchSkill = function (skill) {
+            for (var i = 0; i < this.skills.length; i++) {
+                if (this.skills[i] == skill) {
+                    return i;
+                }
+            }
+            return -1;      // skill not found
+        };
+    }
+
+    // clear form fields
+    function clearForm() {
+        document.getElementById("name").value = "";
+        document.getElementById("skill01").value = "";
+        document.getElementById("skill02").value = "";
+        document.getElementById("skill03").value = "";
+        document.getElementById("skill04").value = "";
+        document.getElementById("skill05").value = "";
+    }
+
+    // add Person from Button click event
+    function addPerson(evt) {
+        evt.preventDefault();
+        var newPerson = new Person(document.getElementById("name").value);
+        newPerson.addSkill(document.getElementById("skill01").value);
+        newPerson.addSkill(document.getElementById("skill02").value);
+        newPerson.addSkill(document.getElementById("skill03").value);
+        newPerson.addSkill(document.getElementById("skill04").value);
+        newPerson.addSkill(document.getElementById("skill05").value);
+
+        people.push(newPerson);        // add Object to array
+        clearForm();
+        alert("Person Added");
+    }
+
+    function searchSkills(evt) {
+        evt.preventDefault();
+        var skillToFind = document.getElementById("skill").value;
+        var found = false;
+
+        for (var i = 0; i < people.length; i++) {
+            var skillIndexNumber = people[i].searchSkill(skillToFind);
+            if (skillIndexNumber != -1) {
+                alert(people[i].name + " has skill " + skillToFind + " as skill #" + (skillIndexNumber+1));
+                found = true;       // at least one person has the skill
+            }
+        }
+        if (!found) {
+            alert("Nobody has skill " + skillToFind);
+        }
+        document.getElementById("skill").value = "";        // clear form field
+    }
+
+    // MAIN CODE SECTION
+    var people = [];      // array to store Person Objects
+
+    // register event handler for add person button
+    var addPersonButton = document.getElementById('addPersonButton');
+    addPersonButton.addEventListener('click', addPerson);
+
+    // register event handler for add person button
+    var searchSkillButton = document.getElementById('searchSkillButton');
+    searchSkillButton.addEventListener('click', searchSkills);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!-- © 2017 Hussian School of Art, Inc.  d/b/a Hussian College -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Listener</title>
+    <style>
+
+        #cube {
+            background: khaki;
+            text-align: center;
+            line-height: 150px;
+            width: 150px; height: 150px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="cube">What Color Am I?</div>
+
+<button type="button" onclick="changeColor()">Turn Blue</button>
+
+<script type="application/javascript">
+    'use strict';
+    function changeColor() {
+        var mydiv = document.getElementById('cube');
+        mydiv.style.backgroundColor = "lightblue";
+    }
+</script>
+</body>
+</html>

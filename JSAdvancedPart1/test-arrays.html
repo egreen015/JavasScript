@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    function outputArray(arr) {
+        for (var i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+    }
+
+    var myArray1 = ["Mike", "John", "Sue", "Mary"];
+    outputArray(myArray1);
+
+    var myArray2 = [];
+//    var myArray2 = new Array();  // Can use line 20 or line 21 to initialize empty array
+    myArray2.push("Alex");
+    myArray2.push("Tom");
+    myArray2.push("Fred");
+    outputArray(myArray2);
+
+    var myArray3 = [];
+    myArray3[0] = "Jose";
+    myArray3[1] = "Wilma";
+    myArray3[2] = "Barney";
+    outputArray(myArray3);
+
+
+</script>
+
+</body>
+</html>

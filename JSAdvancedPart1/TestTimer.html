@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<br>
+<button type="button" onclick="clearTimer()">Click Me</button>
+
+<script>
+
+    function clearTimer() {
+        alert("You clicked the button within 5 seconds so I cleared the Timeout!!")
+        clearTimeout(myTimeout);
+    }
+
+    function Wakeup() {
+        alert("You didn't click the button within 5 seconds!!")
+    }
+
+  var myTimeout = setTimeout(Wakeup, 5000);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!-- © 2017 Hussian School of Art, Inc.  d/b/a Hussian College -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Listener</title>
+    <style>
+
+        #cube {
+            background: khaki;
+            text-align: center;
+            line-height: 150px;
+            width: 150px; height: 150px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="cube">What Color Am I?</div>
+<form>
+    <select id="select">
+        <option value="enabled" selected>
+            Enabled
+        </option>
+        <option value="disabled">
+            Disabled
+        </option>
+    </select>
+    <input id="button" type="submit" value="Turn Blue">
+</form>
+
+<script type="application/javascript">
+    'use strict';
+    var button = document.getElementById('button');
+    button.addEventListener('click', changeColor);
+
+    function changeColor(evt) {
+        evt.preventDefault();       // prevent default handler from running after this function (i.e. reload page)
+        var mydiv = document.getElementById('cube');
+        mydiv.style.backgroundColor = "lightblue";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    // FIFO (first in, last out)
+    function Queue() {
+        this.size = 0;
+        this.elements = [];
+
+        this.enqueue = function (value) {
+            this.elements.push(value);      // add element to END of array
+            this.size++;                    // increase size property
+        };
+        this.dequeue = function () {
+            this.size--;                    // decrease size property
+            return this.elements.shift();   // remove FIRST element of array
+        };
+    }
+
+    debugger;
+
+    var myQueue = new Queue();
+
+    // alerts 1 2 3
+    myQueue.enqueue(1);
+    myQueue.enqueue(2);
+    myQueue.enqueue(3);
+    alert("size = " + myQueue.size);
+    alert(myQueue.dequeue() + " " + myQueue.dequeue() + " " + myQueue.dequeue());
+    alert("size = " + myQueue.size);
+
+</script>
+
+</body>
+</html>

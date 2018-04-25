@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Listener</title>
+    <style>
+
+        #cube {
+            text-align: center;
+            line-height: 150px;
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="cube" style="background-color:#007d7d;">What Color Am I?</div>
+<button id="button" type="submit" value="Turn Bluer">Turn Bluer</button>
+
+
+<script type="application/javascript">
+    'use strict';
+    var button = document.getElementById('button');
+    button.addEventListener('click', changeColor);
+
+    function changeColor(evt) {
+        evt.preventDefault();
+        var myCurrColor = document.getElementById("cube").style.backgroundColor;
+        document.getElementById("cube").style.backgroundColor = MakeBluer(document.getElementById("cube").style.backgroundColor);
+        myCurrColor = document.getElementById("cube").style.backgroundColor;
+        var rgbInts = rgb2Int(myCurrColor);
+        var blue = rgbInts[2];
+        if (blue > 170) {
+            this.removeEventListener('click', changeColor);
+        }
+    }
+
+    function MakeBluer(rgb) {
+        var rgbInts = rgb2Int(rgb);
+        // validate hex string
+        var rValue = hexString(rgbInts[0]);
+        var gValue = hexString(rgbInts[1] - 16);
+        var bValue = hexString(rgbInts[2] + 16);
+
+        var newColor = "#" + rValue + gValue + bValue;
+
+        return newColor;
+    }
+
+    //Function to convert hex format to a rgb color
+    function rgb2Int(rgb) {
+        rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+        return [parseInt(rgb[1]), parseInt(rgb[2]), parseInt(rgb[3])];
+    }
+
+    var hexDigits = new Array
+    ("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f");
+
+    function hexString(x) {
+        return isNaN(x) ? "00" : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
+
+    }
+</script>
+</body>
+</html>
