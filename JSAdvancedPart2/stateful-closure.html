@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    var createCountdown = function() {
+        var count = 60;
+        var f = function() {
+            count--;
+            return count;
+        }
+        return f;
+    }
+
+    var countDown1 = createCountdown();     // instance 1
+    var countDown2 = createCountdown();     // instance 2
+
+    var a = countDown1();       // a is 59
+    var b = countDown1();       // b is 58
+    var c = countDown2();       // c is 59
+    var d = countDown1();       // d is 57
+    var e = countDown2();       // e is 58
+
+    alert("a=" + a + "," +"b=" + b + "," +"c=" + c + "," +"d=" + d + "," +"e=" + e);
+
+</script>
+
+</body>
+</html>

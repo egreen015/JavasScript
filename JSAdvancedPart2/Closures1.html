@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Closures</title>
+</head>
+<body>
+
+<script>
+
+    var unintended;
+    var intended;
+
+    unintended = "accident";
+
+    var setIntended = function(value) {
+        unintended = "too bad";     // can this function change this?
+        if (value == 1) {
+            return ("on purpose");
+        }
+        else {
+            return ("still on purpose")
+        }
+    }
+
+    intended = setIntended(1);
+    alert(intended);
+    intended = setIntended(2);
+    alert(intended);
+    alert(unintended);
+
+
+</script>
+
+</body>
+</html>

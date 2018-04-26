@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Closures</title>
+</head>
+<body>
+
+<script>
+
+    var callFunc = function(f) {
+        var f0 = f(0);
+        var f1 = f(1);
+        return [f0, f0, f1, f1];
+    };
+
+    var addFiveFn = function(param) { return(param+5); };
+
+    var storedFunction = callFunc(addFiveFn);
+    alert(storedFunction);          // returns 5, 5, 6, 6
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Closures</title>
+</head>
+<body>
+
+<script>
+
+    var generate = function(f) {
+        return [f, function(x) { return x * 2; }];
+    };
+
+    var myFunction = function() { return("Hello World"); };
+
+    var storedFunction = generate(myFunction);
+    alert(storedFunction);          // returns array of 2 function definitions
+    alert(storedFunction[0]());     // returns Hello World
+    alert(storedFunction[1](5));    // returns 10
+
+</script>
+
+</body>
+</html>

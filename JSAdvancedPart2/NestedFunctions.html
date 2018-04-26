@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Closures</title>
+</head>
+<body>
+
+<script>
+
+    var compute = function(value) {
+        var square = function(value) {
+            return value * value;
+        }
+        var cube = function(value) {
+            return value * value * value;
+        }
+        return (square(value) + cube(value));
+    };
+
+    alert(compute(5)); // alerts 150 which is 25 + 125
+
+
+</script>
+
+</body>
+</html>

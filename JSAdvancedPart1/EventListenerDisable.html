@@ -27,7 +27,7 @@
     function changeColor(evt) {
         evt.preventDefault();
         var myCurrColor = document.getElementById("cube").style.backgroundColor;
-        document.getElementById("cube").style.backgroundColor = MakeBluer(document.getElementById("cube").style.backgroundColor);
+        document.getElementById("cube").style.backgroundColor = MakeBluer(myCurrColor);
         myCurrColor = document.getElementById("cube").style.backgroundColor;
         var rgbInts = rgb2Int(myCurrColor);
         var blue = rgbInts[2];

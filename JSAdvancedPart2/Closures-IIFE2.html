@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Closures</title>
+</head>
+<body>
+
+<script>
+
+    myVar = 1;    // var to pass into IIFE
+
+    (function myOuterFunction() {
+            var localVar = myVar + 1;
+
+            console.log(localVar);  // outputs 2
+
+            function myInnerFunction() {
+
+                return (localVar + 1);  // has access to out function scope
+            }
+
+            console.log(myInnerFunction());   // outputs 3
+
+        }
+    )(myVar);
+
+</script>
+
+</body>
+</html>

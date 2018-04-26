@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var myVar = "Michael Ciliberti";        // this is Global Var
+
+    var doSomething = function() {
+        myVar = "John Doe";
+        var myVar = "John Doe";     // gets hoisted to top of function
+    }
+
+    alert(myVar);       // Michael Cilibert is output
+    doSomething();
+    alert(myVar);       // Michael Cilibert is output
+
+</script>
+
+</body>
+</html>

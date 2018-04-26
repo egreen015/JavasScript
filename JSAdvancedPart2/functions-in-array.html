@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Functions</title>
+</head>
+<body>
+
+<script>
+
+    // Alternative Javascript Function Declaration
+    var addOne = function(value) {
+        return value+1;
+    };
+
+    var subOne = function(value) {
+        return value-1;
+    };
+    var doubleIt = function(value) {
+        return value*2;
+    };
+
+    var halfIt = function(value) {
+        return value/2;
+    };
+
+    var operations = [addOne, subOne, doubleIt, halfIt];
+    alert(operations[0](5) );       // addOne is called with 5 as parameter
+    alert(operations[1](5) );       // subOne is called with 5 as parameter
+    alert(operations[2](5) );       // doubleIt is called with 5 as parameter
+    alert(operations[3](5) );       // halfIt is called with 5 as parameter
+
+</script>
+
+</body>
+</html>

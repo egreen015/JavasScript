@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    var makeAccumulator = function() {
+        var accum = 0;
+        var f = function(x) {
+            accum += x;
+            return accum;
+        }
+        return f;
+    }
+
+    var myAccumulator = makeAccumulator();
+
+    alert(myAccumulator(3));        // returns 3
+    alert(myAccumulator(2));        // returns 5
+    alert(myAccumulator(5));        // returns 10
+
+</script>
+
+</body>
+</html>

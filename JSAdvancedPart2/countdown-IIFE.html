@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    var countDown = (function() {
+        var count = 60;
+        var f = function(){
+            count--;
+            return count;
+        }
+        return f;
+    }());
+
+    var a = countDown();        // a is 59;
+    var b = countDown();        // b is 58;
+    var c = countDown();        // c is 57;
+    var d = countDown();        // d is 56;
+
+    alert("a=" + a + ", " + "b=" + b + ", " + "c=" + c + ", " +"d=" + d);
+</script>
+
+</body>
+</html>

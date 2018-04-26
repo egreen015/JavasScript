@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Closures</title>
+</head>
+<body>
+
+<script>
+
+    (function myOuterFunction() {
+            var localVar = 1;
+
+            console.log(localVar);
+
+            function myInnerFunction() {
+
+                return (localVar + 1);
+            }
+
+            console.log(myInnerFunction());
+
+        }
+    )();
+
+
+
+</script>
+
+</body>
+</html>

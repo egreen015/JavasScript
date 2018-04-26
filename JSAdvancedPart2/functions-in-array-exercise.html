@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Functions</title>
+</head>
+<body>
+
+<script>
+
+    // Alternative Javascript Function Declaration
+    var add = function(value1, value2) {
+        return value1 + value2;
+    };
+
+    var subtract = function(value1, value2) {
+        return value1 - value2;
+    };
+    var multiply = function(value1, value2) {
+        return value1 * value2;
+    };
+
+    var divide = function(value1, value2) {
+        return (value2 != 0) ? value1 / value2 : undefined;
+    };
+
+    var operations = [add, subtract, multiply, divide];
+    alert(operations[0](6, 3) );       // add is called with 6 and 3 as parameters
+    alert(operations[1](6, 3) );       // subtract is called with 6 and 3 as parameters
+    alert(operations[2](6, 3) );       // multiply is called with 6 and 3 as parameters
+    alert(operations[3](6, 3) );       // divide is called with 6 and 3 as parameters
+    alert(operations[3](6, 0) );       // divide is called with 6 and 0 as parameters
+
+</script>
+
+</body>
+</html>
