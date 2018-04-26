@@ -1,0 +1,66 @@
+<!-- © 2017 Hussian School of Art, Inc.  d/b/a Hussian College -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Listener</title>
+</head>
+<body>
+<div>
+    <h2>Sign up now!</h2>
+    <h4>Terms and Conditions</h4>
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dicta, dolore eius eum impedit libero maiores
+        maxime
+        minima minus nam nesciunt nulla perspiciatis quaerat quasi quo recusandae sit. Aut, sequi.
+    </div>
+    <div>Aperiam, atque beatae consequuntur dolorum enim exercitationem fugit impedit ipsam libero maiores mollitia
+        nobis
+        perspiciatis placeat provident quibusdam, quis sint vitae? Ab dignissimos eius excepturi iste nesciunt non
+        placeat
+        unde.
+    </div>
+    <div>Hic ipsa molestias qui sit suscipit? Consectetur delectus distinctio dolore dolorum, illo nostrum praesentium
+        quam
+        quasi rerum soluta vel, voluptatum. A amet aspernatur commodi labore natus! Iusto molestias temporibus velit!
+    </div>
+    <div>Aliquid assumenda deleniti ex id ipsa nihil pariatur reprehenderit velit. Aliquam consectetur cum dolorem eos
+        iure.
+        Adipisci animi distinctio facilis, harum ipsum itaque, iure laborum nulla officiis perspiciatis, quam quidem!
+    </div>
+    <div>Architecto blanditiis consequatur corporis culpa dolorum, earum et expedita fuga, laborum magnam minus nesciunt
+        nihil nobis totam ullam voluptatibus voluptatum! Pariatur placeat quae quia. Accusantium nulla odio quasi
+        tempora
+        totam!
+    </div>
+</div><br>
+
+<form method="post" action="http://httpbin.org/post">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" id="email" name="email"><br><br>
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd" name="pwd"><br><br>
+    <input id="formCheckbox" type="checkbox"> I agree to the terms and conditions<br><br>
+    <input id="formButton" type="submit" value="Submit">
+</form>
+
+<script>
+    'use strict';
+    var button = document.getElementById('formButton');
+    button.addEventListener('click', validate);
+
+    function validate(evt) {
+        if (document.getElementById("email").value == "") {
+            alert("Please enter your email address to sign up");
+            evt.preventDefault();
+        } else if (document.getElementById("pwd").value == "") {
+            alert("Please enter your password to sign up");
+            evt.preventDefault();
+        } else if (document.getElementById("formCheckbox").checked == false) {
+            alert("You must accept the terms and conditions");
+            evt.preventDefault();
+        }
+        // If we get here, the form data has been successfully validated, so submit/post
+    }
+</script>
+</body>
+</html>

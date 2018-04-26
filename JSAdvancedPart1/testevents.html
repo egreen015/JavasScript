@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<button type="button" id="button">Button</button>
+
+<script>
+
+    function testFunction(evt) {
+
+        alert("You clicked me!");
+    }
+
+    // two-line way to register event handler for button
+    var theButton = document.getElementById('button');
+    theButton.addEventListener('click', testFunction);
+
+    // single-line way to register event handler for button
+//    document.getElementById('button').addEventListener('click', testFunction);
+
+
+</script>
+
+</body>
+</html>
