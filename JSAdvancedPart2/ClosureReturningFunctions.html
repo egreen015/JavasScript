@@ -1,0 +1,28 @@
+<!-- © 2017 Hussian School of Art, Inc.  d/b/a Hussian College -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Closure - Returning Functions</title>
+
+</head>
+<body>
+
+<script type="application/javascript">
+    'use strict';
+    var internalFunction = function () {
+        var doubleIt = function (value) {
+            return value*2;
+        };
+        return doubleIt;
+    };
+
+    var storedFunction = internalFunction();
+
+    var finalValue = storedFunction(5);
+
+    alert(finalValue);
+
+</script>
+</body>
+</html>

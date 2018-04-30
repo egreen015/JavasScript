@@ -1,0 +1,49 @@
+<!-- © 2017 Hussian School of Art, Inc.  d/b/a Hussian College -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Closure - Returning Functions</title>
+
+</head>
+<body>
+
+<script type="application/javascript">
+    'use strict';
+
+    //    var padawan = "light side";
+    //
+    //    var Vader = function() {
+    //        padawan = "dark side";
+    //    };
+    //
+    //    alert(padawan);      // outputs light side
+    //    Vader();
+    //    alert(padawan);      // outputs dark side
+
+    //------------------------------------------------------
+    //    var padawan = "light side";
+    //
+    //    var KyloRen = function() {
+    //        var padawan = "dark side";
+    //    };
+    //
+    //    alert(padawan);      // outputs light side
+    //    KyloRen();
+    //    alert(padawan);      // outputs light side
+
+    //------------------------------------------------------
+    var padawan = "light side";
+
+    var Snoke = function () {
+        padawan = "dark side";
+        if (padawan.length > 0) {
+            var padawan = "dark side";
+        }
+    };
+
+    Snoke();
+    alert(padawan);      // outputs light side due to hoisting
+</script>
+</body>
+</html>

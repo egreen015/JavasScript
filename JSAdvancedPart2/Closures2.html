@@ -13,7 +13,12 @@
 
         // this inner function has access to the outer function's variables, including the parameter​
         function makeFullName() {
-            return nameIntro + firstName + " " + lastName;
+
+            function makeFullName2() {
+                return nameIntro + firstName + " " + lastName;
+            }
+            return(makeFullName2());
+
         }
         return makeFullName();
     }

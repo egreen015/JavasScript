@@ -1,0 +1,27 @@
+<!-- © 2017 Hussian School of Art, Inc.  d/b/a Hussian College -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Closure - Returning Functions</title>
+
+</head>
+<body>
+
+<script type="application/javascript">
+    'use strict';
+    var generate = function (f) {
+        return [f, function(x) {return x * 2;}];
+    };
+
+    var storedFunction = generate;
+
+    var finalValue = storedFunction(5);
+
+    alert(finalValue);                          // returns array [5, function def]
+
+    alert( finalValue[1](finalValue[0]) );      // returns 10
+
+</script>
+</body>
+</html>
