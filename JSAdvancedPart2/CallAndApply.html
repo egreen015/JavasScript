@@ -10,13 +10,11 @@
     function test() {
         console.log(this); // By default, this is bound to window
     }
-
     test();// prints the window object to the console
 
     // we can change the context of this with call or apply
     var context = {a: true, b: 42};     // creates a context object
     test.call(context); // this prints the context object
-
 
     test.apply(context); // this also prints the context object
 
@@ -27,8 +25,8 @@
         console.log(arg2);
     }
 
-    testArgs.apply(context, ['a', 'b']); // apply, takes the arguments to the function as an array.
-    testArgs.call(context, 'a', 'b'); // call, takes the arguments themselves
+    testArgs.apply(context, [context.a, context.b]); // apply, takes the arguments to the function as an array.
+    testArgs.call(context, context.a, context.b); // call, takes the arguments themselves
 
 </script>
 </body>

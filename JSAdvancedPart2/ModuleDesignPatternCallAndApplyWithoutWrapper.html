@@ -88,13 +88,10 @@
     })(clock);
 
     clock.create(10, 10, 10);
-    for (var j = 0; j < 10; j++) {
-        for (var i = 0; i < 60; i++) {
-            clock.tick();
-        }
-    }
-    //    clock.turnAlarmOff();
     clock.currentTime();
+    clock.tick();
+    clock.currentTime();
+
     alarmClock.create(1, 1, 1);
     alarmClock.setAlarmTime(1, 2);
     alarmClock.turnAlarmOn();
