@@ -9,13 +9,14 @@
 <script>
 
     var compute = function(value) {
-        var square = function(value) {
-            return value * value;
-        }
-        var cube = function(value) {
-            return value * value * value;
-        }
-        return (square(value) + cube(value));
+        var anotherVariable = 10;
+        var func1 = function(value) {
+            return (value * value) + anotherVariable;
+        };
+        var func2 = function(value) {
+            return (value * value * value) + anotherVariable;
+        };
+        return (func1(value) + func2(value));
     };
 
     alert(compute(5)); // alerts 150 which is 25 + 125

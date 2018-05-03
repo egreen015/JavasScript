@@ -16,8 +16,10 @@
 
     var addFiveFn = function(param) { return(param+5); };
 
-    var storedFunction = callFunc(addFiveFn);
-    alert(storedFunction);          // returns 5, 5, 6, 6
+    var subOne = function(param) { return(param-1); };
+
+    var storedFunction = callFunc(subOne);
+    alert(storedFunction);          // returns -1, -1, 0, 0
 
 </script>
 

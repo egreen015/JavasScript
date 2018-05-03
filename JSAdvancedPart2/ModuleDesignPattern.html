@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Module Design Pattern></title>
+</head>
+<body>
+
+<script>
+var myModule = (function() {
+
+    var privateVar = "This is a private variable";
+
+    var publicVar = "This is a public variable";
+
+    function privateFunction() {
+        alert("This is a private function and only callable/accessible inside the module");
+    }
+
+    function publicFunction() {
+        alert("This is a public function and callable/accessible outside the module");
+    }
+
+    function publicAccessingPrivateFunction() {
+        privateFunction();      // can access private members insides module
+    }
+
+    return {        // this is the module interface to control accessibility
+        publicVar: publicVar,
+        publicFunction: publicFunction,
+        publicCallingPrivate: publicAccessingPrivateFunction
+    }
+
+})();
+
+alert(myModule.privateVar);         // alerts undefined
+
+alert(myModule.publicVar);          // alerts "This is a public variable"
+
+alert(myModule.privateFunction);    // alerts undefined (would show function source if was accessible)
+//myModule.privateFunction();         // Error reported in console (not accessible out here)
+
+myModule.publicFunction();          // alerts "This is a public function and callable/accessible outside the module"
+
+myModule.publicCallingPrivate();          // alerts "This is a private function and only callable/accessible inside the module"
+
+</script>
+
+</body>
+</html>

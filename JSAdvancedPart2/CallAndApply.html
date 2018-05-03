@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Call & Apply</title>
+</head>
+<body>
+
+<script>
+    function test() {
+        console.log(this); // By default, this is bound to window
+    }
+
+    test();// prints the window object to the console
+
+    // we can change the context of this with call or apply
+    var context = {a: true, b: 42};     // creates a context object
+    test.call(context); // this prints the context object
+
+
+    test.apply(context); // this also prints the context object
+
+    // The difference between call and apply is when a function takes arguments.
+    function testArgs(arg1, arg2) {
+        console.log(this);
+        console.log(arg1);
+        console.log(arg2);
+    }
+
+    testArgs.apply(context, ['a', 'b']); // apply, takes the arguments to the function as an array.
+    testArgs.call(context, 'a', 'b'); // call, takes the arguments themselves
+
+</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Module</title>
+</head>
+<body>
+<script type="application/javascript">
+    var clock = (function () {
+        function create(hours, minutes, seconds) {
+            if (hours < 0 || hours > 23 || minutes < 0 || minutes > 59 || seconds < 0 || seconds > 59) {
+                throw RangeError('Cannot create a clock with an invalid time');
+            }
+            this.hours = hours;
+            this.minutes = minutes;
+            this.seconds = seconds;
+        }
+        function currentTime() {
+            console.log(this.hours + ":" + this.minutes + ":" + this.seconds);
+        }
+        function tick() {
+            this.seconds++;
+            if (this.seconds == 60) {
+                this.seconds = 0;
+                this.minutes++;
+            }
+            if (this.minutes == 60) {
+                this.minutes = 0;
+                this.hours++;
+            }
+            if (this.hours == 24) {
+                this.hours = 0;
+            }
+        }
+        // This is where the interface for the module is defined
+        return {
+            create: create,
+            currentTime: currentTime,
+            tick: tick
+        }
+    })();
+
+    var alarmClock = (function (clk) {
+        function turnAlarmOn() {
+            this.alarmOn = true;
+            console.log("The alarm is on");
+        }
+        function turnAlarmOff() {
+            this.alarmOn = false;
+            console.log("the alarm is off");
+        }
+        function setAlarmTime(hours, minutes) {
+            if (hours < 0 || hours > 23 || minutes < 0 || minutes > 59) {
+                throw RangeError('Cannot create a clock with an invalid alarm time');
+            }
+            this.aHours = hours;
+            this.aMinutes = minutes;
+        }
+        function checkAlarm() {
+            if (this.hours == this.aHours && this.minutes == this.aMinutes) {
+                console.log("Buzz Buzz Buzz");
+            }
+        }
+        function tick() {
+            clk.tick.apply(this);
+            //because checkAlarm is not attached to the module object it's this would be window if we did
+            //not use apply here to change it to the this of the tick method, which is bound to module.
+            checkAlarm.apply(this);
+        }
+
+        function create() {
+            clk.create.apply(this, arguments);
+        }
+
+        function currentTime() {
+            clk.currentTime.apply(this, arguments);
+        }
+
+        return {
+            create: create,
+            currentTime: currentTime,
+            tick: tick,
+            turnAlarmOn: turnAlarmOn,
+            turnAlarmOff: turnAlarmOff,
+            setAlarmTime: setAlarmTime
+        };
+
+    })(clock);
+
+    clock.create(10, 10, 10);
+    for (var j = 0; j < 10; j++) {
+        for (var i = 0; i < 60; i++) {
+            clock.tick();
+        }
+    }
+    //    clock.turnAlarmOff();
+    clock.currentTime();
+    alarmClock.create(1, 1, 1);
+    alarmClock.setAlarmTime(1, 2);
+    alarmClock.turnAlarmOn();
+    for (var i = 0; i < 59; i++) {
+        alarmClock.tick();
+    }
+</script>
+</body>
+</html>

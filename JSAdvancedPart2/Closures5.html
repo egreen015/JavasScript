@@ -13,15 +13,11 @@
 
         // this inner function has access to the outer function's variables, including the parameter​
         function makeFullName() {
-
-            function makeFullName2() {
-                return nameIntro + firstName + " " + lastName;
-            }
-            return(makeFullName2());
-
+            return nameIntro + firstName + " " + lastName;
         }
         return makeFullName();
     }
+
     alert(showName("Michael", "Jackson")); // Your name is Michael Jackson
 
 </script>
