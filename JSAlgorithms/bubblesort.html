@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bubblesort</title>
+</head>
+<body>
+
+<script>
+    function bubbleSort(myList) {
+        var swapped;
+        var temp;
+        do {
+            swapped = false;
+            for (var i = 0; i < myList.length - 1; i++) {
+                if (myList[i] > myList[i + 1]) {
+                    temp = myList[i];
+                    myList[i] = myList[i + 1];
+                    myList[i + 1] = temp;
+                    swapped = true;
+                }
+            }
+        } while (swapped === true)
+        return myList;
+    }
+
+    var myArray = [7, 5, 13, 15, 8];
+    alert(bubbleSort(myArray));
+
+    var myArray2 = [15, 13, 8, 7, 5];
+    alert(bubbleSort(myArray2));
+
+</script>
+
+</body>
+</html>

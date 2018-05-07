@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bubblesort</title>
+</head>
+<body>
+
+<script>
+
+    function myQuickSort(myList) {
+        quickSort(myList, 0, myList.length - 1);
+        return myList;
+    }
+
+    function quickSort(myList, l, h) {
+        console.log("QS L:" + l + " H:" + h + " arr: " + myList);
+        if (l < h) {
+            /* Partitioning index */
+            var p = partition(myList, l, h);
+            console.log("p:" + p);
+            quickSort(myList, l, p - 1);
+            quickSort(myList, p + 1, h);
+        }
+    }
+
+    function partition(myList, l, h) {
+        console.log("PA L:" + l + " H:" + h + " arr: " + myList);
+        var pivotValue = myList[h];
+        var i = (l - 1);
+        var temp;
+
+        for (var j = l; j <= h - 1; j++) {
+            // if the current value is less than the pivot value, swap the current value
+            if (myList[j] <= pivotValue) {
+                i++;
+
+                //swap myList[i] with myList[j]
+                temp = myList[i];
+                myList[i] = myList[j];
+                myList[j] = temp;
+            }
+        }
+
+        //swap myList[i+1], myList[h] , the pivot value
+        temp = myList[i + 1];
+        myList[i + 1] = myList[h];
+        myList[h] = temp;
+
+        return (i + 1);
+    }
+
+    debugger;
+    var myArray = [7, 5, 13, 15, 8];
+    alert(myQuickSort(myArray));
+
+//    var myArray2 = [15, 13, 8, 7, 5];
+//    alert(myQuickSort(myArray2));
+
+</script>
+
+</body>
+</html>

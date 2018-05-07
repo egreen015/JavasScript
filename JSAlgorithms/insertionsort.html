@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bubblesort</title>
+</head>
+<body>
+
+<script>
+    function insertionSort(myList) {
+        var key;
+        var j;
+
+        for (var i = 1; i < myList.length; i++) {
+            key = myList[i];
+            j = i - 1;
+
+            /* Move elements of arr[0..i-1], that are
+             greater than key, to one position ahead
+             of their current position */
+            while (j >= 0 && myList[j] > key) {
+                myList[j + 1] = myList[j];
+                j = j - 1;
+            }
+            myList[j + 1] = key;
+        }
+        return myList;
+    }
+
+    var myArray = [7, 5, 13, 15, 8];
+    alert(insertionSort(myArray));
+
+    var myArray2 = [15, 13, 8, 7, 5];
+    alert(insertionSort(myArray2));
+
+</script>
+
+</body>
+</html>

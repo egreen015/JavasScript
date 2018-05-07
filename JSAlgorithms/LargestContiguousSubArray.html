@@ -1,0 +1,62 @@
+<!-- © 2017 Hussian School of Art, Inc.  d/b/a Hussian College -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Algorithms</title>
+</head>
+<body>
+
+<button onclick="maxLength(unsortedList)">Max Length</button>
+
+
+<script>
+    // Assumes all element values are DISTINCT
+    // Subarray is contiguous IFF:
+    //    - Difference in values of min and max subelements IS EQUAL TO
+    //      the Difference in Indexes of min and max subelements
+    //     EXAMPLE: array = [1, 56, 58, 57, 90, 92, 94, 93, 91, 45]
+    //     Answer is 5 --> [90, 92, 94, 93, 91] is the largest contiguous subarray
+    //     Starting Index of subarray is 4
+    //     Ending Index of subarray is 8
+    //     Min Value in subarry is 90
+    //     Max Value in subarray is 94
+    //     and (8 - 4) == 4 and (94 - 90) == 4
+
+    var unsortedList = [51, 40, 22, 26, 23, 25, 24, 100, 1];
+
+    // Returns length of the longest contiguous subarray
+    function maxLength(myList)
+    {
+        var n = myList.length;
+
+        var max_len = 1;  // Initialize result
+        for (var i=0; i<n-1; i++)
+        {
+            // Initialize min and max for all subarrays starting with i
+            var mn = myList[i];
+            var mx = myList[i];
+
+            // Consider all subarrays starting with i and ending with j
+            for (var j=i+1; j<n; j++)
+            {
+                // Update min and max in this subarray if needed
+                mn = Math.min(mn, myList[j]);
+                mx = Math.max(mx, myList[j]);
+
+                // If current subarray has all contiguous elements
+                if ((mx - mn) == j-i)
+                    max_len = Math.max(max_len, mx-mn+1);
+            }
+        }
+
+        alert(max_len);
+        return max_len;  // Return result
+    }
+    //http://www.geeksforgeeks.org/length-largest-subarray-contiguous-elements-set-1/
+</script>
+
+
+</body>
+</html>
+
