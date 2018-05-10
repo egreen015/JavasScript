@@ -18,20 +18,20 @@
 
         // Create the data table.
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Warriors');
-        data.addColumn('number', 'Number');
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
         data.addRows([
-          ['Jedi', 5],
-          ['Sith', 1],
-          ['Imperial Stormtroopers', 3],
-          ['Rebels', 4],
-          ['Wookies', 2]
+          ['Mushrooms', 3],
+          ['Onions', 1],
+          ['Olives', 1], 
+          ['Zucchini', 1],
+          ['Pepperoni', 2]
         ]);
 
         // Set chart options
-        var options = {'title':'Battle',
+        var options = {'title':'How Much Pizza I Ate Last Night',
                        'width':800,
-                       'height':800};
+                       'height':500};
  
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
@@ -39,7 +39,7 @@
         function selectHandler() {
           var selectedItem = chart.getSelection()[0];
           if (selectedItem) {
-            var topping = data.getValue(selectedItem.row, 0);
+            var topping = data.getValue(selectedItem.row, 0);   // get 0th (first) column of selected row (i.e. Topping)
             alert('The user selected ' + topping);
           }
         }
