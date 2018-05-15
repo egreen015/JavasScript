@@ -1,0 +1,82 @@
+<!-- © 2017 Hussian School of Art, Inc.  d/b/a Hussian College -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Practicing the DOM</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script></head>
+<body>
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Practicing with the Dom</div>
+            <div class="panel-body">
+                <h1>Table Count</h1>
+
+                <table border="1">
+                    <tr>
+                        <td>1 1</td>
+                        <td>1 2</td>
+                    </tr>
+                    <tr>
+                        <td>2 1</td>
+                        <td>2 2</td>
+                    </tr>
+                    </td></table>
+
+                <table>
+                    <tr>
+                        <td>1 1</td>
+                        <td>1 2</td>
+                    </tr>
+                    <tr>
+                        <td>2 1</td>
+                        <td>2 2</td>
+                    </tr>
+                    </td></table>
+
+                <table border="1">
+                    <tr>
+                        <td>1 1</td>
+                        <td>1 2</td>
+                    </tr>
+                    <tr>
+                        <td>2 1</td>
+                        <td>2 2</td>
+                    </tr>
+                    </td></table>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm-2 mydiv"></div>
+    <button class="btn" onclick="countTableElementsWithBorder()">Count</button>
+</div>
+
+
+<script type="application/javascript">
+
+    function countTableElementsWithBorder() {
+        var tables = document.getElementsByTagName("table");
+        var count = 0;
+        debugger;
+        for (var i = 0; i < tables.length; i++) {
+            var currTable = tables[i];
+
+            var tableAttrs = currTable.attributes;
+            for (var j = 0; j < tableAttrs.length; j++) {
+                if (tableAttrs[j].nodeName.toLowerCase() == "border")
+                    if (tableAttrs[j].nodeValue == 1)
+                        count++;
+            }
+        }
+
+        alert("The number of tables with a border element is: " + count);
+    }
+</script>
+</body>
+</html>

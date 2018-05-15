@@ -1,0 +1,35 @@
+<!-- © 2017 Hussian School of Art, Inc.  d/b/a Hussian College -->
+<html>
+<head>
+    <title>DOM Tests</title>
+    <script>
+        function highlightRow() {
+            var myRow = document.getElementById("highlightedRow");
+            myRow.setAttribute("class", "highlighted");
+        }
+    </script>
+    <style>
+        .highlighted {
+            background-color:lightblue;
+        }
+    </style>
+</head>
+<body>
+<h1>Sample elements to be output.</h1>
+<div>This is my div</div>
+<p>This is my paragraph</p>
+<table>
+    <tr id="highlightedRow">
+        <td>row 1 cell 1</td>
+        <td>row 1 cell 2</td>
+        <td>row 1 cell 3</td>
+    </tr>
+    <tr>
+        <td>row 2 cell 1</td>
+        <td>row 2 cell 2</td>
+        <td>row 2 cell 3</td>
+    </tr>
+</table>
+<button onClick="highlightRow()">Output table</button>
+</body>
+</html>

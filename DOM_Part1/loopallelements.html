@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function outputAll() {
+            var tag;
+            var tags = "The tags in the page are:<br>";
+            for (var i = 0; i < document.all.length; i++) {
+                tag = document.all(i).tagName;
+                tags += tag + "<br>"
+            }
+            document.write(tags);
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <p id="hello">Hello</p>
+        <p><b>Goodbye</b></p>
+        <form>
+            <input type="button" value="outputAll" onclick="outputAll()">
+        </form>
+    </div>
+</body>
+</html>

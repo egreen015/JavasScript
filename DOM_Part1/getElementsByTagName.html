@@ -1,0 +1,35 @@
+<!-- © 2017 Hussian School of Art, Inc.  d/b/a Hussian College -->
+<html>
+<head>
+    <title>DOM Tests</title>
+
+    <script>
+        function outputOne() {
+            debugger;
+            var myTables = document.getElementsByTagName("table");
+            alert("# of Tables Detected: " + myTables.length)
+            alert("First Table # of Rows: " + myTables[0].rows.length);
+        }
+
+    </script>
+</head>
+<body>
+<h1>Sample elements to be output.</h1></p>
+<div>This is my div</div>
+<p>This is my paragraph</p>
+<table style="border: 1px solid black">
+    <tr>
+        <td>row 1 cell 1</td>
+        <td>row 1 cell 2</td>
+        <td>row 1 cell 3</td>
+    </tr>
+    <tr>
+        <td>row 2 cell 1</td>
+        <td>row 2 cell 2</td>
+        <td>row 2 cell 3</td>
+    </tr>
+</table>
+<br>
+<button onClick="outputOne()">Output table rows</button>
+</body>
+</html>
