@@ -1,0 +1,35 @@
+<!-- © 2017 Hussian School of Art, Inc.  d/b/a Hussian College -->
+<html>
+<head>
+    <title>DOM Tests</title>
+
+    <script>
+
+        function myBlur()
+        {
+            myName = document.getElementById("firstname");
+            alert(myName.value+" leaving so soon?");
+        }
+
+        function myChange()
+        {
+            myName = document.getElementById("firstname");
+            alert(myName.value+" going incognito, why the name change?");
+        }
+
+    </script>
+
+</head>
+<body>
+<form>
+    First name:<br>
+    <input type="text" name="firstname" id="firstname" onblur="myBlur()" onchange="myChange()">
+    <br>
+    Last name:<br>
+    <input type="text" name="lastname" >
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!-- © 2017 Hussian School of Art, Inc.  d/b/a Hussian College -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Practice onBlur, onChange</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<h1>Form validation example</h1>
+<form method="post" action="http://httpbin.org/post">
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" name="firstName" class="form-control">
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" name="lastName" class="form-control">
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div class="form-group">
+                <label>
+                    Address</label>
+                <input type="text" name="Address1" class="form-control">
+                <br>
+
+                <input type="text" name="Address2" class="form-control">
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label>
+                    City</label>
+                <input type="text" name="City" class="form-control">
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label>
+                    State</label>
+                <input type="text" name="State" class="form-control">
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label>
+                    Zip</label>
+                <input type="text" name="Zip" class="form-control">
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label>
+                    Phone</label>
+                <input type="text" name="phone" class="form-control">
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label>
+                    Race Walking Expertise</label>
+                <select name="expertise" id="rwexpertise" class="form-control">
+                    <option value="unspecified">Unspecified</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                    <option value="olympian">Olympian</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <input type="submit">
+        </div>
+    </div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Overlay Graphic</title>
+
+    <style>
+        #blueSquare {
+            visibility: hidden;     /* hide the blue square until user clicks button */
+            position: absolute;     /* position absolute to place blue square on top of yellow square */
+            top: 100px;
+            left: 100px;
+            z-index: 3;             /* set z-index to make sure blue square is on top of yellow square */
+        }
+
+        .container {
+            position: relative;     /* set div position to relative to its normal position */
+        }
+    </style>
+
+    <script>
+        function overlay() {
+            var myProduct = document.getElementById("blueSquare");
+            myProduct.style.visibility = "visible";
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <img src="YellowSquare.png">
+    <img src="BlueSquare.png" id="blueSquare">
+</div>
+<br>
+<button onClick="overlay()">Overlay Graphic</button>
+
+</body>
+</html>

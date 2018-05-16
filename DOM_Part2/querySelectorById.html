@@ -1,0 +1,23 @@
+<!-- © 2017 Hussian School of Art, Inc.  d/b/a Hussian College -->
+<html>
+<head>
+    <title>DOM Tests</title>
+
+    <script>
+        function saleItemQuerySelector() {
+            var myimage = document.querySelector("#sku001");
+            myimage.style.border = "2px solid red";
+        }
+    </script>
+
+</head>
+<body>
+<p><img src="TwoFeetInAfrica.jpg" alt="Two Feet in Africa" id="sku001"></p>
+<p><img src="TwoFeetInNepal.jpg" alt="Two Feet in Nepal"  id="sku002" class="onSale"></p>
+<p><img src="TwoFeetInSouthAmerica.jpg" alt="Two Feet in South America" id="sku003" class="onSale"></p>
+<p><img src="TwoFeetTravels.jpg" alt="Two Feet Travels" id="sku004"></p>
+
+<button onClick="saleItemQuerySelector()">Single Item</button>
+
+</body>
+</html>

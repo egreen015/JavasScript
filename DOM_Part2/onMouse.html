@@ -1,0 +1,27 @@
+<!-- © 2017 Hussian School of Art, Inc.  d/b/a Hussian College -->
+<html>
+<head>
+    <title>DOM Tests</title>
+
+    <script>
+
+        function colorBackground(pid) {
+            var myp = document.getElementById(pid);
+                myp.style.backgroundColor = "khaki";
+        }
+
+        function uncolorBackground(pid) {
+            debugger;
+            var myp = document.getElementById(pid);
+            myp.style.backgroundColor = "";
+        }
+    </script>
+
+</head>
+<body>
+<h1>Mouse over your favorite movie quote</h1>
+<p id="princessBride" onmouseenter="colorBackground(this.id)" onmouseleave="uncolorBackground(this.id)">Hello. My name is Inigo Montoya. You killed my father. Prepare to die.</p>
+<p id="empireStrikes" onmouseenter="colorBackground(this.id)" onmouseleave="uncolorBackground(this.id)">Do or do not, there is no try.</p>
+<p id="godfather" onmouseenter="colorBackground(this.id)" onmouseleave="uncolorBackground(this.id)">I'm gonna make him an offer he can't refuse.</p>
+</body>
+</html>
